@@ -5,7 +5,9 @@ Tusfiqur, Hasan Md, Duy MH Nguyen, Mai TN Truong, Triet A. Nguyen, Binh T. Nguye
 - Contains the training scripts for classification and segmentation models for FGADR and EyPACS datasets
 - Scripts for Additional models and other datasets will be added soon.
 
-Contact: Hasan Md Tusfiqur Alam (hasan.alam@dfki.de)
+
+Contact: Hasan Md Tusfiqur Alam (hasan.alam@dfki.de)  
+Licenced under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1)
 
 ## Installation
 
@@ -26,7 +28,7 @@ To install the dependencies create a virtualenv and run:
 ```shell
 $ pip install -r requirements.txt
 ```
-**Datasets**
+## Datasets
 
 Datasets used in this paper can be accessed from the following links:
 
@@ -35,13 +37,13 @@ Datasets used in this paper can be accessed from the following links:
 - [EyePACS Dataset](https://paperswithcode.com/dataset/kaggle-eyepacs)
 
 
-**For classification**
+## For classification
 
 - The 'dr_classification' folder contains scripts for the dr grading classification task.
 - Follow readme.md inside 'dr_classification' for instructions.
 
 
-**For segmentation**
+## For segmentation
 
 - The 'dr_segmentation' folder contains scripts for the dr segmentation task.
 -  Follow readme.md inside 'dr_segmentaion' instructions
