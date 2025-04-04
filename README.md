@@ -1,10 +1,11 @@
-# dr-joint-learning
-**Official Repository for DRG-Net**
 
-Tusfiqur, Hasan Md, Duy MH Nguyen, Mai TN Truong, Triet A. Nguyen, Binh T. Nguyen, Michael Barz, Hans-Juergen Profitlich et al. "DRG-Net: interactive joint learning of multi-lesion segmentation and classification for diabetic retinopathy grading." arXiv preprint arXiv:2212.14615 (2022).
-https://arxiv.org/abs/2212.14615
-- Contains the training sciprts for classification and segmentation models for FGADR and EyPACS datasets
+## Official Repository for DRG-Net
+
+Tusfiqur, Hasan Md, Duy MH Nguyen, Mai TN Truong, Triet A. Nguyen, Binh T. Nguyen, Michael Barz, Hans-Juergen Profitlich, et al. "DRG-Net: interactive joint learning of multi-lesion segmentation and classification for diabetic retinopathy grading. [arXiv preprint](https://arxiv.org/abs/2212.14615)
+- Contains the training scripts for classification and segmentation models for FGADR and EyPACS datasets
 - Scripts for Additional models and other datasets will be added soon.
+
+Contact: Hasan Md Tusfiqur Alam (hasan.alam@dfki.de)
 
 ## Installation
 
@@ -28,21 +29,21 @@ $ pip install -r requirements.txt
 **Datasets**
 
 Datasets used in this paper can be accessed from the following links:
-- Indian Diabetic Retinopathy Image Dataset (IDRiD)
-https://ieee-dataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid
-- FGADR Dataset - Look Deeper into Eyes. https://csyizhou.github.io/FGADR/
-- EyePACS Dataset - https://paperswithcode.com/dataset/kaggle-eyepacs
+
+- [Indian Diabetic Retinopathy Image Dataset - IDRiD](https://ieee-dataport.org/open-access/indian-diabetic-retinopathy-image-dataset-idrid)
+- [FGADR Dataset - Look Deeper into Eyes.](https://csyizhou.github.io/FGADR/)
+- [EyePACS Dataset](https://paperswithcode.com/dataset/kaggle-eyepacs)
 
 
 **For classification**
 
-- 'dr_classification' folder contains scripts for dr grading classification task.
+- The 'dr_classification' folder contains scripts for the dr grading classification task.
 - Follow readme.md inside 'dr_classification' for instructions.
 
 
 **For segmentation**
 
-- 'dr_segmentation' folder contains scripts for dr segmentation task.
+- The 'dr_segmentation' folder contains scripts for the dr segmentation task.
 -  Follow readme.md inside 'dr_segmentaion' instructions
 
 
