@@ -65,6 +65,7 @@ def get_images(image_dir, preprocess='0', phase='train'):
 
     imgs.sort()
     mask_paths = []
+    image_with_mask = []
     train_number = int(len(imgs) * train_ratio)
     eval_number = int(len(imgs) * eval_ratio)
     if phase == 'train':
@@ -85,8 +86,14 @@ def get_images(image_dir, preprocess='0', phase='train'):
                 paths.append(candidate_path)
             else:
                 paths.append(None)
-        mask_paths.append(paths)
-    return image_paths, mask_paths
+
+        if mask_paths is not None:
+            mask_paths.append(paths)
+            image_with_mask.append(image_path)
+
+    # print(mask_paths)
+    # print(image_paths)
+    return image_with_mask, mask_paths
 
 
 def get_images_fgadr(image_dir, preprocess='0', phase='train'):

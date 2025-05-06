@@ -27,7 +27,7 @@ class IDRIDDataset(Dataset):
         self.images = []
         # print(mask_paths[0])
         if mask_paths is not None:
-            print('coming here...', class_id)
+            # print('coming here...', class_id)
             for image_path, mask_path4 in zip(image_paths, mask_paths):
                 mask_path = mask_path4[class_id]
                 if mask_path is None:

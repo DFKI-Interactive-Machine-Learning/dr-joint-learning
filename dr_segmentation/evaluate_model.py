@@ -1,10 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# **************************************
-# @Author  : Qiqi Xiao & Jiaxu Zou
-# @Email     : xiaoqiqi177@gmail.com & zoujx96@gmail.com
-# @File    : evaluate_model.py
-# **************************************
+
 import sys
 from torch.autograd import Variable
 import os
@@ -66,9 +62,11 @@ def eval_model(model, eval_loader):
 
             masks_soft.extend(masks_soft_batch)
             masks_hard.extend(masks_hard_batch)
+            print(masks_soft_batch.shape, masks_hard_batch.shape)
 
-    print(len(masks_soft), len(masks_hard))
-    print(masks_soft[0])
+    # print(len(masks_soft), len(masks_hard))
+    # print(masks_soft[0])
+
     masks_soft = np.array(masks_soft).transpose((1, 0, 2, 3))
     masks_hard = np.array(masks_hard).transpose((1, 0, 2, 3))
     masks_soft = np.reshape(masks_soft, (masks_soft.shape[0], -1))
@@ -113,19 +111,19 @@ if __name__ == '__main__':
 
     model.to(device)
 
-    test_image_paths, test_mask_paths = get_images(image_dir, args.preprocess, phase='eval')
+    test_image_paths, test_mask_paths = get_images(image_dir, args.preprocess, phase='test')
     test_dataset = IDRIDDataset(test_image_paths, test_mask_paths, config.LESION_IDS[args.lesion])
     print(test_image_paths)
     test_loader = DataLoader(test_dataset, 1, shuffle=False)
     auc_result = eval_model(model, test_loader)
-    print(auc_result)
+    print("AUC: ", auc_result)
 
-    # fgadr test
-    f_test_image_paths, f_test_mask_paths = get_images_fgadr_from_pd(image_dir, args.preprocess, phase='test')
-    f_test_dataset = FGADRDataset(f_test_image_paths, f_test_mask_paths, config.LESION_IDS[args.lesion])
-
-    f_test_loader = DataLoader(f_test_dataset, 1, shuffle=False)
-    f_auc_result = eval_model(model, f_test_loader)
-    print("FGADR AUC: ", f_auc_result)
+    # # fgadr test
+    # f_test_image_paths, f_test_mask_paths = get_images_fgadr_from_pd(image_dir, args.preprocess, phase='test')
+    # f_test_dataset = FGADRDataset(f_test_image_paths, f_test_mask_paths, config.LESION_IDS[args.lesion])
+    #
+    # f_test_loader = DataLoader(f_test_dataset, 1, shuffle=False)
+    # f_auc_result = eval_model(model, f_test_loader)
+    # print("FGADR AUC: ", f_auc_result)
 
     
