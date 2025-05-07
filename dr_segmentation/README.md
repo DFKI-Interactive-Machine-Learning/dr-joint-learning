@@ -38,7 +38,7 @@ The meaning of each preprocessing index is indicated in the following table.
 To run inference on a single image and save both the input and the prediction:
 
 ```
-python evaluate_single_image.py --image_path 'path_to_image' --model 'path_to_model_weights' --output_dir 'output_directory'
+python evaluate_single.py --image_path 'path_to_image' --model 'path_to_model_weights' --output_dir 'output_directory'
 ```
 
 
