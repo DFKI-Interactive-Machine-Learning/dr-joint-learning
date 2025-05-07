@@ -62,7 +62,7 @@ def eval_model(model, eval_loader):
 
             masks_soft.extend(masks_soft_batch)
             masks_hard.extend(masks_hard_batch)
-            print(masks_soft_batch.shape, masks_hard_batch.shape)
+
 
     # print(len(masks_soft), len(masks_hard))
     # print(masks_soft[0])
@@ -102,7 +102,7 @@ if __name__ == '__main__':
     resume = args.model
 
     if os.path.isfile(resume):
-        print("=> loading checkpoint '{}'".format(resume))
+        # print("=> loading checkpoint '{}'".format(resume))
         checkpoint = torch.load(resume)
         model.load_state_dict(checkpoint['state_dict'])
         print('Model loaded from {}'.format(resume))
@@ -113,7 +113,8 @@ if __name__ == '__main__':
 
     test_image_paths, test_mask_paths = get_images(image_dir, args.preprocess, phase='test')
     test_dataset = IDRIDDataset(test_image_paths, test_mask_paths, config.LESION_IDS[args.lesion])
-    print(test_image_paths)
+
+    print("Size of Test Set: ", len(test_image_paths))
     test_loader = DataLoader(test_dataset, 1, shuffle=False)
     auc_result = eval_model(model, test_loader)
     print("AUC: ", auc_result)

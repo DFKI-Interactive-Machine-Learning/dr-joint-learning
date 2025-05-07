@@ -117,7 +117,7 @@ def get_images_fgadr(image_dir, preprocess='0', phase='train'):
         images_number = 0
 
         imgs_ori = glob.glob(os.path.join(image_dir, 'Original_Images' + '/*.png'))
-        print("coming in imgs")
+        # print("coming in imgs")
         imgs_ori.sort()
         images_number += len(imgs_ori)
         # mean brightness.
